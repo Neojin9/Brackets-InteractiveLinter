@@ -216,7 +216,7 @@ define(function (require, exports, module) {
 
         // Add href for help
         message.href = "http://jslinterrors.com/" + (message.raw || "").replace(/'*\{*(\w*)\}*'*/g, "$1").replace(/\s/g, '-').replace(/\.$/, '').toLowerCase();
-        message.reason += " - " + message.code;
+        message.codeHref = "http://jslinterrors.com/" + (message.code || "");
 
         //console.log(token, message);
         return token;
