@@ -168,6 +168,9 @@ define(function (require, exports, module) {
             // Message in line widget messages
             $.each(messages, function(index, message) {
                 messageContent += "<div class='interactive-linter-line-{0} interactive-linter-line-{1}'>{2}".format(message.type, message.code, message.reason);
+                if (message.codeHref) {
+                    messageContent += " - <a href='{0}' target='interactivelinter'>{1}</a>".format(message.codeHref, message.code);
+                }
                 if (message.href) {
                     messageContent += " - <a href='{0}' target='interactivelinter'>Details</a>".format(message.href);
                 }
